@@ -16,6 +16,9 @@ set ignorecase 		"ignore case
 "jk is escape
 inoremap kj <esc>
 
+"Ctrl+l is delete, just as ctrl+h is backspace
+inoremap <C-l> <del>
+
 "move up/down editor lines
 noremap j gj
 noremap k gk
@@ -35,6 +38,17 @@ set mouse=a
 
 "can use ; instead of :
 :nmap ; : 
+
+"Map K to the opposite of J (add a new line underneath, move curser back)
+:nmap K o<Esc>k 
+
+"Lets test out this string selection"
+
+"Move 5 lines if hold down ctrl-[hjkl]
+:nmap <C-j> 5j
+:nmap <C-k> 5k
+:nmap <C-h> 5h
+:nmap <C-l> 5l
 
 "Only fold top two layers, internal statements arent folded
 set foldnestmax=2
