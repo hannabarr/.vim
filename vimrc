@@ -16,8 +16,15 @@ set ignorecase 		"ignore case
 "jk is escape
 inoremap kj <esc>
 
-"Ctrl+l is delete, just as ctrl+h is backspace
-inoremap <C-l> <del>
+"Change the 'insert linebreak here' to <C-c> because that
+"doesn't do anything right now, and it leaves j open for movement
+inoremap <C-c> <C-j>
+
+"Allow movement in insert mode
+inoremap <C-k> <C-o>gk
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-j> <C-o>gj
 
 "move up/down editor lines
 noremap j gj
@@ -39,12 +46,14 @@ set mouse=a
 "can use ; instead of :
 :nmap ; : 
 
-"Map K to the opposite of J (add a new line underneath, move curser back)
-:nmap K o<Esc>k 
+" For my own sake, switch the J functionality to K,
+" and give the opposite functionality to J (add a new line underneath, move curser back)
+:nnoremap K J
+:nnoremap J o<Esc>k 
 
 "Lets test out this string selection"
 
-"Move 5 lines if hold down ctrl-[hjkl]
+"Move 5 lines if hold down ctrl-[hjkl] in normal mode
 :nmap <C-j> 5j
 :nmap <C-k> 5k
 :nmap <C-h> 5h
