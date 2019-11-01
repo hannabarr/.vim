@@ -53,11 +53,11 @@ set mouse=a
 
 "Lets test out this string selection"
 
-"Move 5 lines if hold down ctrl-[hjkl] in normal mode
-:nmap <C-j> 5j
-:nmap <C-k> 5k
-:nmap <C-h> 5h
-:nmap <C-l> 5l
+"Move vim windows with ctrl-[hjkl] in normal mode
+:nmap <C-j> <C-w>j
+:nmap <C-k> <C-w>k
+:nmap <C-h> <C-w>h
+:nmap <C-l> <C-w>l
 
 "Only fold top two layers, internal statements arent folded
 set foldnestmax=2
@@ -65,6 +65,13 @@ set foldnestmax=2
 "Map the folding/unfolding commands to <space bar>
 nnoremap <space> za
 vnoremap <space> zf
+
+"Make Tab and Shift-Tab indent and unindent
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " use Pathogen as a package manager for vim
 execute pathogen#infect()
