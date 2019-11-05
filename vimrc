@@ -165,6 +165,9 @@ let g:airline_filetype_overrides = {
   let g:airline_symbols.notexists = 'Ɇ'
   let g:airline_symbols.whitespace = 'Ξ'
 
+" fugitive, open Gdiff in vertical window
+:set diffopt+=vertical
+
 " Git gutter colorscheme
 highlight GitGutterAdd    guifg=#87D7AF guibg=#121212 ctermfg=114 ctermbg=233
 highlight GitGutterChange guifg=#F3E430 guibg=#121212 ctermfg=11 ctermbg=233
