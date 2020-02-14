@@ -35,6 +35,7 @@ let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
 let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
 let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
 let s:light_green     = { "gui": "#87D7AF", "cterm": "115" }
+let s:light_greener     = { "gui": "#87D7AF", "cterm": "114" }
 let s:dark_purple     = { "gui": "#af5fd7", "cterm": "134" }
 let s:light_purple    = { "gui": "#af87d7", "cterm": "140" }
 let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
@@ -118,8 +119,8 @@ call s:h("SpecialKey",    {"fg": s:medium_gray})
 call s:h("NonText",       {"fg": s:medium_gray})
 call s:h("Directory",     {"fg": s:light_green})
 call s:h("ErrorMsg",      {"fg": s:norm})
-call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
-call s:h("Search",        {"fg": s:yellow, "gui": "underline", "cterm": "underline"})
+call s:h("IncSearch",     {"bg": s:light_blue, "fg": s:light_black, "cterm": "bold", "gui": "bold"})
+call s:h("Search",        {"bg": s:yellow, "fg": s:light_black, "cterm": "bold", "gui": "bold"})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 
 hi! link ModeMsg MoreMsg
@@ -135,11 +136,11 @@ call s:h("WarningMsg",    {"fg": s:norm})
 call s:h("WildMenu",      {"fg": s:bg, "bg": s:norm})
 call s:h("Folded",        {"fg": s:medium_gray})
 call s:h("FoldColumn",    {"fg": s:bg_subtle})
-call s:h("DiffAdd",       {"fg": s:green})
+call s:h("DiffAdd",       {"bg": s:light_greener, "fg": s:light_black})
 call s:h("DiffDelete",    {"fg": s:red})
-call s:h("DiffChange",    {"fg": s:dark_yellow})
-call s:h("DiffText",      {"fg": s:dark_blue})
-call s:h("SignColumn",    {"fg": s:light_green})
+call s:h("DiffChange",    {"bg": s:yellow, "fg": s:light_black})
+call s:h("DiffText",      {"bg": s:light_blue, "fg": s:light_black})
+call s:h("SignColumn",    {"bg": s:light_greener, "fg": s:light_black})
 
 
 if has("gui_running")

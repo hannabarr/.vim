@@ -67,17 +67,16 @@ nnoremap <space> za
 vnoremap <space> zf
 
 "Make Tab and Shift-Tab indent and unindent
-nnoremap <Tab> >>_
-nnoremap <S-Tab> <<_
-inoremap <S-Tab> <C-D>
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
+nnoremap > >>_
+nnoremap < <<_
+vnoremap > >gv
+vnoremap < <gv
 
 " use Pathogen as a package manager for vim
 execute pathogen#infect()
 
 "start NERDTree
-"autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree  
 
 "Open NERDTree with Ctrl-f
 map <C-f> :NERDTreeToggle<CR>
@@ -134,6 +133,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+
+" Configure syntastic with CAMO pylintrc
+:let g:syntastic_python_pylint_rcfile='/home/hcb/Documents/camo/camo_backend/.pylintrc'
 
 " Airline functions
 let g:airline#extensions#tabline#enabled = 1
