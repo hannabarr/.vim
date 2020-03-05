@@ -107,11 +107,11 @@ if !hasmapto('<Plug>Commentary') || maparg('gc','n') ==# ''
   xmap gc  <Plug>Commentary
   nmap gc  <Plug>Commentary
   omap gc  <Plug>Commentary
-  nmap gcc <Plug>CommentaryLine
+  nmap gc  <Plug>CommentaryLine
   if maparg('c','n') ==# '' && !exists('v:operator')
     nmap cgc <Plug>ChangeCommentary
   endif
-  nmap gcu <Plug>Commentary<Plug>Commentary
+  nmap gu <Plug>Commentary<Plug>Commentary
 endif
 
 " vim:set et sw=2:
