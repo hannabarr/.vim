@@ -44,12 +44,12 @@ set mouse=a
 :colorscheme tequila-sunrise
 
 "can use ; instead of :
-:nmap ; : 
+:nmap ; :
 
 " For my own sake, switch the J functionality to K,
 " and give the opposite functionality to J (add a new line underneath, move curser back)
 :nnoremap K J
-:nnoremap J o<Esc>k 
+:nnoremap J o<Esc>k
 
 "Lets test out this string selection"
 
@@ -75,8 +75,12 @@ vnoremap < <gv
 " use Pathogen as a package manager for vim
 execute pathogen#infect()
 
+" XMIDAS syntax highlighting
+" Doesn't work as is. Has error every time it opens a file
+" autocmd BufRead *.txt source ~/.vim/syntax/midas.vim
+
 "start NERDTree
-"autocmd vimenter * NERDTree  
+"autocmd vimenter * NERDTree
 
 "Open NERDTree with Ctrl-f
 map <C-f> :NERDTreeToggle<CR>
@@ -135,7 +139,10 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " Configure syntastic with CAMO pylintrc
-:let g:syntastic_python_pylint_rcfile='/home/hcb/Documents/camo/camo_backend/.pylintrc'
+:let g:syntastic_python_pylint_rcfile='/home/hcb/projects/camo/camo_backend/.pylintrc'
+
+" Configure syntastic to add specific header files
+let g:syntastic_cuda_check_header = 1
 
 " Airline functions
 let g:airline#extensions#tabline#enabled = 1
@@ -156,13 +163,17 @@ let g:airline_filetype_overrides = {
   endif
 
   " unicode symbols
-  let g:airline_left_sep = '▶'
-  let g:airline_right_sep = '◀'
-  let g:airline_symbols.crypt = '🔒'
+  " let g:airline_left_sep = '▶'
+  " let g:airline_right_sep = '◀'
+  let g:airline_left_sep = '>'
+  let g:airline_right_sep = '<'
+  " let g:airline_symbols.crypt = '🔒'
+  let g:airline_symbols.crypt = 'crypt'
   let g:airline_symbols.linenr = '☰'
   let g:airline_symbols.linenr = '¶'
   let g:airline_symbols.maxlinenr = '㏑'
-  let g:airline_symbols.branch = '⎇'
+  " let g:airline_symbols.branch = '⎇'
+  let g:airline_symbols.branch = 'branch'
   let g:airline_symbols.paste = 'ρ'
   let g:airline_symbols.notexists = 'Ɇ'
   let g:airline_symbols.whitespace = 'Ξ'

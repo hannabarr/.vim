@@ -6,7 +6,7 @@
 
 " - Mark Borgerding, Xetron, Sep 2002
 
-if getline(1) =~ '^startmacro' || getline(1) =~ '^STARTMACRO' 
+if getline(1) =~ '^startmacro' || getline(1) =~ '^STARTMACRO'
   set filetype=midas
   syn clear
   syn case ignore
@@ -14,19 +14,19 @@ if getline(1) =~ '^startmacro' || getline(1) =~ '^STARTMACRO'
   " if there are commands from options trees that you'd like to add,
   " uncomment this line
   "source ~/option_trees.vim
-  " and use the following perl script to extract the syntax keyword rules from 
-  " a commands.cfg file 
+  " and use the following perl script to extract the syntax keyword rules from
+  " a commands.cfg file
   "       #!/usr/bin/perl
   "       while (<>) {
   "         next unless s/^\s*(\d*)\s*([[:alnum:]\*_]+).*/syn keyword midas_func $2/;
   "         s/\*(.+)$/\[$1\]/ or s/\*//; print;
   "       }
 
- 
+
   syn match midas_comment "!.*"
   "syn match midas_string  /"[^"]*"/hs=s,he=e
   syn region midas_string  start=+"+  skip=+""+  end=+"+
-  
+
   syn match midas_number "\<\d\+.\d\+"
   syn match midas_number "\<\d\+"
   syn match midas_number "-\<\d\+.\d\+"
@@ -46,7 +46,7 @@ if getline(1) =~ '^startmacro' || getline(1) =~ '^STARTMACRO'
   syn keyword midas_op eq[ss] gt lt ge le ne eqt anybits allbits subs rexists fexists
   syn keyword midas_op neq[ss] ngt nlt nge nle nne neqt nanybits nallbits nsubs nrexists nfexists
   syn keyword midas_op and or
- 
+
   " X-Midas baseline keywords
   syn keyword midas_func ABS[CISSA] ACQ[MOD] ADD AMFSY[NC] ARCH[IVE]
   syn keyword midas_func ASK ATT[ACH] AUDIOCD AUX[ILIARY] BEE[P] BIEXPSVI BITM[ASK]
