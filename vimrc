@@ -39,7 +39,10 @@ set ttymouse=xterm2
 set mouse=a
 
 ":colorscheme molokai
-":let g:molokai_original = 1
+" :let g:molokai_original = 1
+
+" Clipboard access (must use vimx not vim)
+:set clipboard=unnamedplus
 
 :colorscheme tequila-sunrise
 
@@ -185,3 +188,7 @@ let g:airline_filetype_overrides = {
 highlight GitGutterAdd    guifg=#87D7AF guibg=#121212 ctermfg=114 ctermbg=233
 highlight GitGutterChange guifg=#F3E430 guibg=#121212 ctermfg=11 ctermbg=233
 highlight GitGutterDelete guifg=#E32791 guibg=#121212 ctermfg=202 ctermbg=233
+set updatetime=100
+
+
+
