@@ -13,6 +13,8 @@ set incsearch		"search as characters are entered
 set hlsearch		"highlight matches
 set ignorecase 		"ignore case
 
+set scrolloff=3
+
 "jk is escape
 inoremap kj <esc>
 
@@ -49,10 +51,8 @@ set mouse=a
 "can use ; instead of :
 :nmap ; :
 
-" For my own sake, switch the J functionality to K,
-" and give the opposite functionality to J (add a new line underneath, move curser back)
-:nnoremap K J
-:nnoremap J o<Esc>k
+" Give the opposite functionality of J to K (add a new line underneath, move curser back)
+:nnoremap K o<Esc>k
 
 "Lets test out this string selection"
 
@@ -74,6 +74,9 @@ nnoremap > >>_
 nnoremap < <<_
 vnoremap > >gv
 vnoremap < <gv
+
+" search for what's highlighted under your cursor
+vnoremap # y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " use Pathogen as a package manager for vim
 execute pathogen#infect()
@@ -168,15 +171,17 @@ let g:airline_filetype_overrides = {
   " unicode symbols
   " let g:airline_left_sep = '▶'
   " let g:airline_right_sep = '◀'
-  let g:airline_left_sep = '>'
-  let g:airline_right_sep = '<'
+  " let g:airline_left_sep = '>'
+  " let g:airline_right_sep = '<'
+  let g:airline_left_sep = '»'
+  let g:airline_right_sep = '«'
   " let g:airline_symbols.crypt = '🔒'
   let g:airline_symbols.crypt = 'crypt'
   let g:airline_symbols.linenr = '☰'
   let g:airline_symbols.linenr = '¶'
   let g:airline_symbols.maxlinenr = '㏑'
-  " let g:airline_symbols.branch = '⎇'
-  let g:airline_symbols.branch = 'branch'
+  let g:airline_symbols.branch = '⎇'
+  " let g:airline_symbols.branch = 'branch'
   let g:airline_symbols.paste = 'ρ'
   let g:airline_symbols.notexists = 'Ɇ'
   let g:airline_symbols.whitespace = 'Ξ'

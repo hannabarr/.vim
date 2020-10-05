@@ -52,7 +52,7 @@ let s:purple          = s:light_purple
 let s:cyan            = s:light_cyan
 let s:green           = s:light_green
 let s:red             = s:light_red
-let s:visual          = s:medium_gray
+let s:visual          = s:lighter_black
 let s:yellow          = s:light_yellow
 
 function! s:h(group, style)
@@ -73,7 +73,7 @@ call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
 "endif
 
 call s:h("Cursor",        {"bg": s:light_green, "fg": s:norm })
-call s:h("Comment",       {"fg": s:bg_subtle})
+call s:h("Comment",       {"fg": s:medium_gray})
 
 call s:h("Constant",      {"fg": s:light_purple})
 call s:h("String",        {"fg": s:light_yellow})
@@ -129,7 +129,7 @@ call s:h("LineNr",        {"fg": s:bg_subtle})
 call s:h("Question",      {"fg": s:light_green})
 call s:h("VertSplit",     {"bg": s:bg_very_subtle, "fg": s:bg_very_subtle})
 call s:h("Title",         {"fg": s:light_blue})
-call s:h("Visual",        {"fg": s:norm, "bg": s:visual})
+call s:h("Visual",        {"bg": s:visual})
 call s:h("VisualNOS",     {"bg": s:bg_subtle})
 call s:h("WarningMsg",    {"fg": s:norm})
 
@@ -164,7 +164,7 @@ call s:h("TabLineSel",    {"fg": s:purple, "bg": s:bg_subtle, "gui": "bold", "ct
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_very_subtle})
 
 "CURSOR SETTINGS
-call s:h("CursorLineNr",  {"fg": s:bg_subtle})
+call s:h("CursorLineNr",  {"fg": s:light_gray})
 call s:h("CursorLine",    {"bg": s:bg_very_subtle})
 call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
 call s:h("ColorColumn",   {"bg": s:bg_very_subtle})

@@ -1,0 +1,73 @@
+syntax enable		"enable syntax processing
+set tabstop=4		"number of visual spaces per TAB
+set softtabstop=4	"number of spaces in tab
+set expandtab		"tabs are spaces (TAB is shortcut for Insert 4 Spaces)
+set shiftwidth=4
+set number		"show line number
+set showcmd		"show command in bottom bar
+set cursorline		"highlight current line
+set wildmenu		"visual autocomplete for command menu
+set showmatch		"highligh matching braces
+
+set incsearch		"search as characters are entered
+set hlsearch		"highlight matches
+set ignorecase 		"ignore case
+
+set scrolloff=3
+
+"jk is escape
+inoremap kj <esc>
+
+"Change the 'insert linebreak here' to <C-c> because that
+"doesn't do anything right now, and it leaves j open for movement
+inoremap <C-c> <C-j>
+
+"Allow movement in insert mode
+inoremap <C-k> <C-o>gk
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-j> <C-o>gj
+
+"move up/down editor lines
+noremap j gj
+noremap k gk
+
+set hidden "allow hidden buffers
+set history=1000
+set undolevels=1000
+
+filetype plugin indent on
+set ttymouse=xterm2
+set mouse=a
+
+"can use ; instead of :
+:nmap ; :
+
+" Give the opposite functionality of J to K (add a new line underneath, move curser back)
+:nnoremap K o<Esc>k
+
+"Move vim windows with ctrl-[hjkl] in normal mode
+:nmap <C-j> <C-w>j
+:nmap <C-k> <C-w>k
+:nmap <C-h> <C-w>h
+:nmap <C-l> <C-w>l
+
+"Only fold top two layers, internal statements arent folded
+set foldnestmax=2
+
+"Map the folding/unfolding commands to <space bar>
+nnoremap <space> za
+vnoremap <space> zf
+
+"Make Tab and Shift-Tab indent and unindent
+nnoremap > >>_
+nnoremap < <<_
+vnoremap > >gv
+vnoremap < <gv
+
+" search for what's highlighted under your cursor
+vnoremap # y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" XMIDAS syntax highlighting
+" Doesn't work as is. Has error every time it opens a file
+" autocmd BufRead *.txt source ~/.vim/syntax/midas.vim
