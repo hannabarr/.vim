@@ -1,3 +1,6 @@
+" use Pathogen as a package manager for vim
+execute pathogen#infect()
+
 syntax enable		"enable syntax processing
 set tabstop=4		"number of visual spaces per TAB
 set softtabstop=4	"number of spaces in tab
@@ -39,14 +42,19 @@ set undolevels=1000
 filetype plugin indent on
 set ttymouse=xterm2
 set mouse=a
+:let mapleader=','
 
-":colorscheme molokai
 " :let g:molokai_original = 1
+" :colorscheme molokai
 
-" Clipboard access (must use vimx not vim)
+" Clipboard access for copy/paste (must use vimx not vim)
 :set clipboard=unnamedplus
 
 :colorscheme tequila-sunrise
+
+" set background=dark
+" colorscheme solarized
+
 
 "can use ; instead of :
 :nmap ; :
@@ -90,9 +98,6 @@ function! Highlighting()
   return ":silent set hlsearch\<CR>"
 endfunction
 nnoremap <silent> <expr> <CR> Highlighting()
-
-" use Pathogen as a package manager for vim
-execute pathogen#infect()
 
 " XMIDAS syntax highlighting
 " Doesn't work as is. Has error every time it opens a file
@@ -166,6 +171,7 @@ let g:syntastic_cuda_check_header = 1
 " Airline functions
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='deus'
+" let g:airline_theme='solarized'
 let g:airline_filetype_overrides = {
     \ 'defx':  ['defx', '%{b:defx.paths[0]}'],
     \ 'gundo': [ 'Gundo', '' ],
@@ -181,14 +187,8 @@ let g:airline_filetype_overrides = {
     let g:airline_symbols = {}
   endif
 
-  " unicode symbols
-  " let g:airline_left_sep = '▶'
-  " let g:airline_right_sep = '◀'
-  " let g:airline_left_sep = '>'
-  " let g:airline_right_sep = '<'
   let g:airline_left_sep = '»'
   let g:airline_right_sep = '«'
-  " let g:airline_symbols.crypt = '🔒'
   let g:airline_symbols.crypt = 'crypt'
   let g:airline_symbols.linenr = '☰'
   let g:airline_symbols.linenr = '¶'
@@ -203,10 +203,10 @@ let g:airline_filetype_overrides = {
 :set diffopt+=vertical
 
 " Git gutter colorscheme
+highlight! link SignColumn LineNr
 highlight GitGutterAdd    guifg=#87D7AF guibg=#121212 ctermfg=114 ctermbg=233
 highlight GitGutterChange guifg=#F3E430 guibg=#121212 ctermfg=11 ctermbg=233
 highlight GitGutterDelete guifg=#E32791 guibg=#121212 ctermfg=202 ctermbg=233
+
 set updatetime=100
-
-
 
