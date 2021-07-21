@@ -6,7 +6,8 @@
 
 " - Mark Borgerding, Xetron, Sep 2002
 
-if getline(1) =~ '^startmacro' || getline(1) =~ '^STARTMACRO'
+"if getline(1) =~ '^startmacro' || getline(1) =~ '^STARTMACRO'
+if match(readfile(expand("%:p")),"^startmacro")!=-1 || match(readfile(expand("%:p")),"^STARTMACRO")!=-1
   set filetype=midas
   syn clear
   syn case ignore

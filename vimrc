@@ -101,7 +101,9 @@ nnoremap <silent> <expr> <CR> Highlighting()
 
 " XMIDAS syntax highlighting
 " Doesn't work as is. Has error every time it opens a file
-" autocmd BufRead *.txt source ~/.vim/syntax/midas.vim
+if has("autocmd")
+    autocmd BufRead *.txt source ~/.vim/syntax/midas.vim
+endif
 
 "start NERDTree
 "autocmd vimenter * NERDTree
@@ -208,5 +210,8 @@ highlight GitGutterAdd    guifg=#87D7AF guibg=#121212 ctermfg=114 ctermbg=233
 highlight GitGutterChange guifg=#F3E430 guibg=#121212 ctermfg=11 ctermbg=233
 highlight GitGutterDelete guifg=#E32791 guibg=#121212 ctermfg=202 ctermbg=233
 
-set updatetime=100
+set updatetime=500
 
+" Highlight trailing whitespace
+highlight TrailingWhitespace ctermbg=red guibg=red
+match TrailingWhitespace /\s\+\%#\@<!$/
